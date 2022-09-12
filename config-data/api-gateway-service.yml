@@ -2,8 +2,8 @@ server:
   port: 8080
 eureka:
   client:
-    serviceUrl:
-      defaultZone: ${REGISTRY_SERVICE_URL}
+    service-url:
+      defaultZone: http://localhost:8082/eureka
 spring:
   cloud:
     gateway:
@@ -11,11 +11,11 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: customerService
-          uri: lb://customerService
+        - id: customer-service
+          uri: lb://customer-service
           predicates:
             - Path=/api/v1/customers/**
-        - id: prj-account-mngt-bank
-          uri: lb://prj-account-mngt-bank
+        - id: account-saving-service
+          uri: lb://account-saving-service
           predicates:
             - Path=/api/v1/accounts/**
