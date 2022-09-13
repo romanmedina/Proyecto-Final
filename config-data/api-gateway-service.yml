@@ -19,3 +19,11 @@ spring:
           uri: lb://account-saving-service
           predicates:
             - Path=/api/v1/accounts/**
+        - id: account-fixed-service
+          uri: lb://account-fixed-service
+          predicates:
+            - Path=/api/v1/accounts/account_fixed/**
+        - id: account-saving-service
+          uri: lb://account-saving-service
+          predicates:
+            - Path=/api/v1/accounts/account_credit/**
