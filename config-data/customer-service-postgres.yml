@@ -1,0 +1,17 @@
+server:
+  port: 8087
+spring:
+  jpa:
+    database: postgresql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/customer_service_db
+    username: postgres
+    password: psql
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka
