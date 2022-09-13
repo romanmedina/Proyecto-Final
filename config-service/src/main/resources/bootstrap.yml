@@ -1,0 +1,18 @@
+server:
+  port: 8081
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/romanmedina/Proyecto-Final
+          default-label: main
+          search-paths: config-data
+          username: romanmedina
+          password: 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
+  security:
+      user:
+        name: root
+        password: cl@ve
+  application:
+    name: config-service
